@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(void){
+float x = 1.7643923;
+float y = 1.7644;//Round off value
+float z = 1.7643;//Truncate value
+float Ea,Er,Ep;
+
+Ea = fabs(x-y);
+Er = fabs(Ea/x);
+Ep = (Er*100);
+
+printf("\nFor the Round-off value\n");
+printf("Absolute Error %f\n", Ea);
+printf("Relative Error %f\n", Er);
+printf("Percentage Error %f\n", Ep);
+
+Ea = fabs(x-z);
+Er = fabs(Ea/x);
+Ep = Er*100;
+
+printf("\nFor the Truncated value\n");
+printf("Absolute Error %f\n", Ea);
+printf("Relative Error %f\n", Er);
+printf("Percentage Error %f\n", Ep);
+
+}

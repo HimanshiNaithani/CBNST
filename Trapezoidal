@@ -1,0 +1,30 @@
+#include<stdio.h>
+float f(float x)
+{
+ return 1/(1+x*x);
+}
+int main()
+{
+ int n;
+ float i,a,b,sum=0,h;
+ printf("Enter values of a and b: ");
+ scanf("%f%f",&a,&b);
+ printf("Enter the number of iterations: ");
+ scanf("%d",&n);
+ h=(b-a)/n;
+ sum=f(a)+f(b);
+ for(i=a+h;i<b;i=i+h)
+ sum=sum+2*f(i);
+ sum=(h*sum)/2;
+ printf("\nValue of intervals=%f\n",sum);
+}
+
+OUTPUT
+student@gehu-HP-Compaq-Pro-4300-SFF-PC:~$ gcc trapeziodal.c
+student@gehu-HP-Compaq-Pro-4300-SFF-PC:~$ ./a.out
+Enter values of a and b: 
+0 6 
+Enter the number of iterations: 6
+
+Value of intervals=1.410799
+student@gehu-HP-Compaq-Pro-4300-SFF-PC:~$ 

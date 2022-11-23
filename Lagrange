@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{
+ int n;
+ printf("Enter no of terms: \n");
+ scanf("%d",&n);
+ float X[n],y[n],x,sum=0,term;
+ int i,j;
+ printf("enter  the values of x\n");
+ for(i=0;i<n;i++)
+ scanf("%f",&X[i]);
+ printf("Enter the values of y: \n");
+ for(i=0;i<n;i++)
+  scanf("%f",&y[i]);
+ printf("Enter value of x for which you want y: \n");
+  scanf("%f",&x);
+ for(i=0;i<n;i++)
+ {
+ term=1;
+ for(j=0;j<n;j++)
+ {
+ if(i!=j)
+ 
+ term=term*((x-X[j])/(X[i]-X[j]));
+ }
+ sum=sum+term*y[i];
+ }
+ printf("\nValue at x=%g is=%f\n",x,sum);
+}
+
+OUTPUT:
+student@gehu-HP-Compaq-Pro-4300-SFF-PC:~$ gcc lagrange.c
+student@gehu-HP-Compaq-Pro-4300-SFF-PC:~$ ./a.out
+Enter no of terms: 
+4
+enter  the values of x
+5 6 9 11
+Enter the values of y: 
+12 13 14 16
+Enter value of x for which you want y: 
+10
+
+Value at x=10 is=14.666668
+ 
+

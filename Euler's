@@ -1,0 +1,47 @@
+#include<stdio.h>
+#define f(x,y) x+y
+int main(){
+float x0,y0,xn,h,yn,slope;
+int i,n;
+
+printf("Enter initial condition\n: ");
+printf("x0= ");
+scanf("%f",&x0);
+printf("y0= ");
+scanf("%f",&y0);
+printf("Enter calculation point xn= ");
+scanf("%f",&xn);
+printf("Enter number of steps: ");
+scanf("%d",&n);
+h=(xn-x0)/n;
+printf("______________\n");
+for(i=0;i<n;i++)
+{
+slope=f(x0,y0);
+yn=y0+h*slope;
+printf("%4f\t%.4f\t%0.4f\t%.4f\n",x0,y0,slope,yn);
+y0=yn;
+x0=x0+h;
+}
+printf("\nValue of y at x=%0.2f is %0.3f\n",xn,yn);
+return 0;
+}
+
+Enter initial condition
+: x0= 0
+y0= 1
+Enter calculation point xn= 1
+Enter number of steps: 10
+______________
+0.000000	1.0000	1.0000	1.1000
+0.100000	1.1000	1.2000	1.2200
+0.200000	1.2200	1.4200	1.3620
+0.300000	1.3620	1.6620	1.5282
+0.400000	1.5282	1.9282	1.7210
+0.500000	1.7210	2.2210	1.9431
+0.600000	1.9431	2.5431	2.1974
+0.700000	2.1974	2.8974	2.4872
+0.800000	2.4872	3.2872	2.8159
+0.900000	2.8159	3.7159	3.1875
+
+Value of y at x=1.00 is 3.187
